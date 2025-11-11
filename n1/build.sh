@@ -29,7 +29,7 @@ PACKAGES="$PACKAGES luci-i18n-nikki-zh-cn"
 # PACKAGES="$PACKAGES openssh-sftp-server"
 # PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
 # 文件管理器
-PACKAGES="$PACKAGES luci-i18n-filemanager-zh-cn"
+# PACKAGES="$PACKAGES luci-i18n-filemanager-zh-cn"
 # 静态文件服务器dufs(推荐)
 # PACKAGES="$PACKAGES luci-i18n-dufs-zh-cn"
 # 判断是否需要编译 Docker 插件
