@@ -257,12 +257,12 @@ jobs:
           include_docker="${{ github.event.inputs.include_docker }}"
           rootfs_partsize="${{ github.event.inputs.rootfs_partsize }}"
           luci_version="${{ github.event.inputs.luci_version }}"
-
+          
           IFS=',' read -r -a profile_array <<< "$profiles"
-
+          
           for profile in "${profile_array[@]}"; do
             echo "Building for profile: $profile"
-
+            
             docker run --rm -i \
               --user root \
               -v "${{ github.workspace }}/bin:/home/build/immortalwrt/bin" \
@@ -276,15 +276,6 @@ jobs:
               -e INCLUDE_DOCKER=$include_docker \
               -e ROOTFS_PARTSIZE=$rootfs_partsize \
               immortalwrt/imagebuilder:armsr-armv8-openwrt-${luci_version} /bin/bash /home/build/immortalwrt/build.sh
-
-      - name: Show ImageBuilder output structure
-        run: |
-          echo "===== ls bin ====="
-          ls -R bin || true
-          echo "===== ls bin/targets ====="
-          ls -R bin/targets || true
-
-          
           done
           
       - name: Download prebuilt rootfs.tar.gz
