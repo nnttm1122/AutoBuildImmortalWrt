@@ -276,6 +276,13 @@ jobs:
               -e INCLUDE_DOCKER=$include_docker \
               -e ROOTFS_PARTSIZE=$rootfs_partsize \
               immortalwrt/imagebuilder:armsr-armv8-openwrt-${luci_version} /bin/bash /home/build/immortalwrt/build.sh
+      - name: Show ImageBuilder output structure
+        run: |
+          echo "===== ls bin ====="
+          ls -R bin || true
+          echo "===== ls bin/targets ====="
+          ls -R bin/targets || true
+          
           done
           
       - name: Download prebuilt rootfs.tar.gz
