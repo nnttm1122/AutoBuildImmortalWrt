@@ -9,7 +9,7 @@
 #### 打包img 采用 `ophub/amlogic-s9xxx-openwrt@main`
 #### 默认底包位置：https://github.com/wukongdaily/AutoBuildImmortalWrt/releases/tag/rootfs
 #### armbina PVE CT容器安装方法
-####pct create 103 /var/lib/vz/template/cache/immortalwrt-24.10.4-armsr-armv8-generic-rootfs.tar.gz \
+#### pct create 103 /var/lib/vz/template/cache/immortalwrt-24.10.4-armsr-armv8-generic-rootfs.tar.gz \
 ####    -arch arm64 \
 ####    -cores 4 \
 ####    -memory 1024 \
