@@ -34,6 +34,7 @@ on:
           - a311d
           - a311d-oes
           - s922x-oes-plus
+          - wxy-oect
           # ...（略去其他型号，保持原样）...
       include_docker:
         description: "是否编译 Docker 插件"
