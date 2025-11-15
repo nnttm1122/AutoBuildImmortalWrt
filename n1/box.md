@@ -8,7 +8,25 @@
 #### rootfs.tar.gz 构建采用ImmortalWrt的ImageBuilder
 #### 打包img 采用 `ophub/amlogic-s9xxx-openwrt@main`
 #### 默认底包位置：https://github.com/wukongdaily/AutoBuildImmortalWrt/releases/tag/rootfs
-
+#### armbina PVE CT容器安装方法
+####pct create 103 /var/lib/vz/template/cache/immortalwrt-24.10.4-armsr-armv8-generic-rootfs.tar.gz \
+####    -arch arm64 \
+####    -cores 4 \
+####    -memory 1024 \
+####    -net0 name=eth0,bridge=vmbr0,ip=dhcp,type=veth \
+####    -ostype unmanaged \
+####    -rootfs local:1G \
+####    -hostname Immortalwrt && pct start 103 && pct console 103
+#### 解释：
+#### 1、pct create → 创建 LXC 容器。
+#### 2、-arch arm64 → ARM64 架构。
+#### 3、-cores 4 / -memory 1024 → 分配 CPU 和内存。
+#### 4、-net0 ... → 配置网络桥接 DHCP。
+#### 5、-ostype unmanaged → 自定义系统。
+#### 6、-rootfs local:1G → 分配 1G 容器磁盘。
+#### 7、-hostname Immortalwrt → 容器名字。
+#### 8、&& pct start 103 → 创建完成后直接启动容器。
+#### 9、&& pct console 103 → 直接进入容器终端。
 #### 本项目中的release仅用于作者测试 且会定期删除 建议fork本项目后自行在Action构建
 ##### 若release中下载吃力 可在国内加速站下载 
 [![Github](https://img.shields.io/badge/Release文件可在国内加速站下载-FC7C0D?logo=github&logoColor=fff&labelColor=000&style=for-the-badge)](https://wkdaily.cpolar.top/archives/1) 
