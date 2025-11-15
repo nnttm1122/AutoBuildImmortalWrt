@@ -13,7 +13,7 @@ echo "$(date '+%Y-%m-%d %H:%M:%S') - 开始构建arm64的rootfs.tar.gz"
 # 定义所需安装的包列表 下列插件你都可以自行删减
 PACKAGES=""
 PACKAGES="$PACKAGES curl fdisk"
-# PACKAGES="$PACKAGES luci-i18n-diskman-zh-cn"
+PACKAGES="$PACKAGES luci-i18n-diskman-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-package-manager-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-firewall-zh-cn"
 # 服务——FileBrowser 用户名admin 密码admin
