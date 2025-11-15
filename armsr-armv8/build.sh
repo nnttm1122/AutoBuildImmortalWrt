@@ -103,3 +103,26 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "$(date '+%Y-%m-%d %H:%M:%S') - Build completed successfully."
+
+
+# =========================================
+# 自动生成 PVE LXC 可用 rootfs.tar.gz
+# =========================================
+TARGET_DIR=$(find bin/targets/ -type d -name "armv8" | head -n1)
+if [ -z "$TARGET_DIR" ]; then
+    echo "❌ 找不到 bin/targets/*/armv8 目录，无法生成 PVE rootfs"
+    exit 1
+fi
+
+ROOTFS_FILE=$(find "$TARGET_DIR" -type f -name "*-rootfs.tar.gz" | head -n1)
+if [ -z "$ROOTFS_FILE" ]; then
+    echo "❌ 未找到 rootfs.tar.gz 文件"
+    exit 1
+fi
+
+echo "✅ 找到 rootfs 文件: $ROOTFS_FILE"
+
+# 拷贝并重命名为 PVE LXC 可用文件
+PVE_ROOTFS="/home/build/immortalwrt/bin/targets/pve-rootfs.tar.gz"
+cp "$ROOTFS_FILE" "$PVE_ROOTFS"
+echo "✅ PVE LXC rootfs 已生成: $PVE_ROOTFS"
