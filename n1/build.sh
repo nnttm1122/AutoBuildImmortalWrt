@@ -25,7 +25,7 @@ PACKAGES="$PACKAGES luci-i18n-argon-config-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-ttyd-zh-cn"
 PACKAGES="$PACKAGES luci-i18n-passwall-zh-cn"
 PACKAGES="$PACKAGES luci-app-openclash"
-PACKAGES="$PACKAGES luci-i18n-nikki-zh-cn"
+PACKAGES="$PACKAGES luci-app-nikki"
 # PACKAGES="$PACKAGES openssh-sftp-server"
 # PACKAGES="$PACKAGES luci-i18n-samba4-zh-cn"
 # 文件管理器
