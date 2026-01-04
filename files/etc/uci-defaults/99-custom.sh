@@ -15,13 +15,13 @@ uci set "dhcp.@domain[-1].name=time.android.com"
 uci set "dhcp.@domain[-1].ip=203.107.6.88"
 
 # 检查配置文件pppoe-settings是否存在 该文件由build.sh动态生成
-SETTINGS_FILE="/etc/config/pppoe-settings"
-if [ ! -f "$SETTINGS_FILE" ]; then
-    echo "PPPoE settings file not found. Skipping." >>$LOGFILE
-else
+# SETTINGS_FILE="/etc/config/pppoe-settings"
+# if [ ! -f "$SETTINGS_FILE" ]; then
+#     echo "PPPoE settings file not found. Skipping." >>$LOGFILE
+# else
     # 读取pppoe信息($enable_pppoe、$pppoe_account、$pppoe_password)
-    . "$SETTINGS_FILE"
-fi
+#     . "$SETTINGS_FILE"
+# fi
 
 # 1. 先获取所有物理接口列表
 ifnames=""
