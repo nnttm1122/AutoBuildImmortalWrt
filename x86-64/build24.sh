@@ -7,18 +7,18 @@ echo "Starting 99-custom.sh at $(date)" >> $LOGFILE
 echo "编译固件大小为: $PROFILE MB"
 echo "Include Docker: $INCLUDE_DOCKER"
 
-echo "Create pppoe-settings"
-mkdir -p  /home/build/immortalwrt/files/etc/config
+# echo "Create pppoe-settings"
+# mkdir -p  /home/build/immortalwrt/files/etc/config
 
 # 创建pppoe配置文件 yml传入环境变量ENABLE_PPPOE等 写入配置文件 供99-custom.sh读取
-cat << EOF > /home/build/immortalwrt/files/etc/config/pppoe-settings
-enable_pppoe=${ENABLE_PPPOE}
-pppoe_account=${PPPOE_ACCOUNT}
-pppoe_password=${PPPOE_PASSWORD}
-EOF
+# cat << EOF > /home/build/immortalwrt/files/etc/config/pppoe-settings
+# enable_pppoe=${ENABLE_PPPOE}
+# pppoe_account=${PPPOE_ACCOUNT}
+# pppoe_password=${PPPOE_PASSWORD}
+# EOF
 
-echo "cat pppoe-settings"
-cat /home/build/immortalwrt/files/etc/config/pppoe-settings
+# echo "cat pppoe-settings"
+# cat /home/build/immortalwrt/files/etc/config/pppoe-settings
 
 if [ -z "$CUSTOM_PACKAGES" ]; then
   echo "⚪️ 未选择 任何第三方软件包"
